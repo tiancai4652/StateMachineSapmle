@@ -1,0 +1,30 @@
+﻿<Window x:Class="StateMachineSapmle.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="350" Width="525" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Margin="20" Click="Button_Click">GoUp</Button>
+                <Button Margin="20" Click="Button_Click_1">GoDown</Button>
+                <Button Margin="20" Click="Button_Click_2">GoStop</Button>
+                <Button Margin="20" Click="Button_Click_3">GoError</Button>
+                <Button Margin="20" Click="Button_Click_4">GoReset</Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Margin="20"></TextBlock>
+            <TextBox Grid.Row="1" Text="{Binding Elevator.Message}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></TextBox>
+        </Grid>
+    </Grid>
+</Window>
